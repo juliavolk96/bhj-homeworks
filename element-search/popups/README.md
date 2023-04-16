@@ -16,7 +16,7 @@
 Разметка окон представлена следующим кодом:
 
 ```html
-<div class="modal" id="modal_main">
+<div class="modal modal" id="modal_main">
   <div class="modal__content">
     <div class="modal__close modal__close_times">&times;</div>
     <a href="#" class="btn btn_danger modal__close show-success">Сделать хорошо</a>

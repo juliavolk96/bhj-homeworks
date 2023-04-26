@@ -1,24 +1,21 @@
-let modal = document.getElementById('modal_main');
-modal.classList.add("modal_active");
 
-let modalTwo = document.getElementById('modal_success');
+const modalMain = document.getElementById('modal_main');
+const modalSuccess = document.getElementById('modal_success');
 
+const closeButtons = document.querySelectorAll('.modal__close');
+const successButton = document.querySelector('.show-success');
 
-let btnClose = document.getElementsByClassName('modal__close_times');
-let btnSuccess = document.getElementsByClassName('btn btn_danger show-success')[0];
+modalMain.classList.add('modal_active');
 
+closeButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    const modal = button.closest('.modal');
+    modal.classList.remove('modal_active');
+  });
+});
 
-btnClose[0].onclick = function() {
-  modal.classList.remove("modal_active");
-}
-
-btnClose[1].onclick = function() {
-  modalTwo.classList.remove("modal_active");
-  console.log("modal")
-}
-
-btnSuccess.onclick = function() {
-  modal.classList.remove("modal_active");
-  modalTwo.classList.add("modal_active")
-}
-
+successButton.addEventListener('click', function(event) {
+  event.preventDefault();
+  modalMain.classList.remove('modal_active');
+  modalSuccess.classList.add('modal_active');
+});

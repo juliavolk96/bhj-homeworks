@@ -1,5 +1,3 @@
-
-
 const dropdowns = document.querySelectorAll(".dropdown")
 
 dropdowns.forEach(dropdown => {
@@ -19,6 +17,7 @@ dropdowns.forEach(dropdown => {
     event.preventDefault();
     const value = event.target.textContent;
     dropdownButton.textContent = value;
+    dropdownList.classList.remove("dropdown__list_active");
   }
 
   dropdownItems.forEach(item => {

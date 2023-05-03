@@ -17,12 +17,4 @@ tooltipElements.forEach(element => {
   element.addEventListener('blur', e => {
     tooltip.classList.remove('tooltip_active');
   });
-
-  element.addEventListener('focus', e => {
-    tooltip.textContent = element.getAttribute('title');
-    const elementRect = element.getBoundingClientRect();
-    tooltip.style.left = `${elementRect.left}px`;
-    tooltip.style.top = `${elementRect.bottom}px`;
-    tooltip.classList.add('tooltip_active');
-  });
 });

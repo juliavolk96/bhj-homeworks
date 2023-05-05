@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) => {
   xhr.upload.addEventListener('progress', (event) => {
     if(event.lengthComputable) {
       let percent = (event.loaded / event.total) * 100;
-      progress.value = percent.toFixed(2);
+      progress.value = event.loaded / event.total;
     }
   });
   xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
